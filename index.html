@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Sales Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/630622aa33.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <figure class="nav__logo--wrapper">
+          <img
+            src="gdc-low-resolution-logo-white-on-transparent-background.png"
+            alt=""
+            class="nav__logo"
+          />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link link__hover-effect"><a href="">Home</a></li>
+          <li class="nav__link link__hover-effect"><a href="">Search</a></li>
+          <li class="nav__link link__hover-effect"><a href="">Contact</a></li>
+        </ul>
+      </nav>
+      <form
+        action=""
+        class="searchbar"
+        id="form1"
+        onsubmit="searchMovies();return false"
+      >
+        <h1 class="header__title">Browse Our Movies</h1>
+        <label for="search">Search Movie By Keyword</label>
+        <div class="input__wrapper">
+          <input
+            type="text"
+            name=""
+            id="search"
+            placeholder='Search "Harry Potter"'
+            autocomplete="off"
+            required
+          />
+          <button form="form1" type="submit" value="Submit">
+            <i class="fa-solid fa-magnifying-glass click"></i>
+          </button>
+        </div>
+      </form>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="search__wrapper">
+            <div class="search__result search__item">
+              <h2>Search Results:</h2>
+            </div>
+            <div class="random__keyword--generator search__item">
+              <button id="random__movie" class="click" onclick="randMovie()">
+                Find random movie!
+              </button>
+            </div>
+            <div class="cscs search__item">
+              <select id="filter" onchange="sortMovies(event)">
+                <option value="" disabled selected>Sort</option>
+                <option value="NEWEST">Newest</option>
+                <option value="OLDEST">Oldest</option>
+                <option value="ALPHA">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+          <div class="movie__list"></div>
+          <div class="no-result">
+            <figure class="no-result__image--wrapper">
+              <img
+                src="./undraw_web_search_re_efla.svg"
+                class="no-result__image"
+                alt=""
+              />
+            </figure>
+            <div class="no-result__description">
+              <h2 class="no-result__title">
+                Could not find any matches related to your current search.
+              </h2>
+              <h3 class="no-result__sub-title">
+                Please Change the filter or reset it below.
+              </h3>
+            </div>
+            <input type="reset" form="form1" class="click no-result__reset" />
+          </div>
+          <div class="books books__loading">
+            <i class="fas fa-spinner books__loading--spinner"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </body>
+</html>
